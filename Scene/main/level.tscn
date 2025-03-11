@@ -7,8 +7,12 @@
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(7, 86)
-polygon = PackedVector2Array(-21, 439, 401, 445, 401, 348, 546, 350, 543, 445, 734, 445, 724, 338, 826, 360, 824, 426, 943, 412, 945, 217, 1192, 216, 1198, 575, -18, 578)
+position = Vector2(25.5556, 86)
+scale = Vector2(1.03717, 1)
+polygon = PackedVector2Array(-21, 439, 401, 445, 401, 348, 546, 350, 543, 445, 734, 445, 724, 338, 826, 360, 824, 426, 943, 412, 945, 217, 1091.86, 210, 1094.75, 321, 1235.52, 321, 1232.63, 245, 1300.12, 245, 1305.9, 153, 1407.14, 153, 1407.14, 226, 1471.74, 248, 1602.86, 359, 1784.13, 375, 1979.85, 372, 2144.72, 375, 2370.34, 369, 2501.46, 502, 2728.04, 486, 2715.51, 356, 2871.7, 362, 2844.7, 267, 2832.17, 124, 2832.17, -79, 3089.6, -88, 3046.21, 334, 2871.7, 486, 2902.55, 610, 2590.17, 686, 2319.24, 543, 2056.02, 550, 1737.85, 559, 1480.42, 458, 1740.74, 559, 1198, 575, -18, 578)
 
 [node name="Player" parent="StaticBody2D/CollisionPolygon2D" instance=ExtResource("1_jtolt")]
 position = Vector2(79, 384)
+
+[node name="Camera2D" type="Camera2D" parent="StaticBody2D/CollisionPolygon2D/Player"]
+position_smoothing_enabled = true

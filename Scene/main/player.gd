@@ -27,12 +27,15 @@ func _physics_process(delta: float) -> void:
 	# Añadiendo direccion de movimiento del sprite.
 	# direction sprite
 	if direction == 1:
-		# si el jugador mira a la derecha se ejecuta 
+		# si el jugador mira a la derecha se ejecuta la siguiente linea de codigo.
 		$AnimatedSprite2D.flip_h=false
 	elif direction == -1:
+		# si el jugador mira a la izquierda se  ejecuta la siguiente linea de codigo.
 		$AnimatedSprite2D.flip_h=true
 	
+	
 	# Añadiendo deciones de acciones en el jugador 
+	# is_on_floor = esta en el suelo.
 	if not is_on_floor():
 		#si el jugador no esta en el suelo se ejecuta este frame. 
 		$AnimatedSprite2D.play("jump")
