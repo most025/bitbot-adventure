@@ -45,3 +45,20 @@ func _physics_process(delta: float) -> void:
 	else:
 		# si el jugador no se ha movido se ejecutara este frame.
 		$AnimatedSprite2D.play("idle")
+
+func lose():
+	get_tree().reload_current_scene()
+
+
+func colicionar_com_enemigo(enemy):
+	if (position.y < enemy.position.y):
+		enemy.queue_free()
+		velocity.y=JUMP_VELOCITY
+	else:
+		lose()
+
+func _on_area_2d_area_entered(area):
+	if (area.is_in_group("enemies")):
+		colicionar_com_enemigo(area)
+	elif (area.is_in_group("deatzone")):
+		lose()

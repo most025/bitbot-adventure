@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://bktb7y0vvlli5"]
+
+[ext_resource type="Texture2D" uid="uid://b1dp6rtgcou5i" path="res://assets/enemies/bee.png" id="1_3f765"]
+[ext_resource type="Script" path="res://Scene/enemies/bee.gd" id="1_280a0"]
+[ext_resource type="Texture2D" uid="uid://c21bph3trn043" path="res://assets/enemies/bee_move.png" id="2_jyeik"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uln1x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3f765")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jyeik")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hvill"]
+radius = 34.0
+height = 114.0
+
+[node name="Bee" type="Area2D" groups=["enemies"]]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_280a0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -62)
+sprite_frames = SubResource("SpriteFrames_uln1x")
+autoplay = "default"
+frame_progress = 0.0471769
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -56)
+shape = SubResource("CapsuleShape2D_hvill")
+debug_color = Color(0.779512, 0.435433, 0.112014, 0.42)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
