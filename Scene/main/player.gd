@@ -49,16 +49,21 @@ func _physics_process(delta: float) -> void:
 func lose():
 	get_tree().reload_current_scene()
 
-
+# Función con la lógica que determina la colición del jugador con el enemigo aereo.
 func colicionar_com_enemigo(enemy):
 	if (position.y < enemy.position.y):
 		enemy.queue_free()
 		velocity.y=JUMP_VELOCITY
 	else:
 		lose()
-
+# Función que permite la colición con eneigos aereos.
 func _on_area_2d_area_entered(area):
 	if (area.is_in_group("enemies")):
 		colicionar_com_enemigo(area)
 	elif (area.is_in_group("deatzone")):
 		lose()
+
+# Función que permite la colición con enemigos terrestres.
+func _on_area_2d_body_entered(body: Node2D) -> void:
+		if (body.is_in_group("enemies")):
+			colicionar_com_enemigo(body)
