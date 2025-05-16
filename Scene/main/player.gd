@@ -35,7 +35,6 @@ func _physics_process(delta: float) -> void:
 	
 	
 	# Añadiendo deciones de acciones en el jugador 
-	# is_on_floor = esta en el suelo.
 	if not is_on_floor():
 		#si el jugador no esta en el suelo se ejecuta este frame. 
 		$AnimatedSprite2D.play("jump")
