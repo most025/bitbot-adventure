@@ -59,7 +59,7 @@ func colicionar_com_enemigo(enemy):
 func _on_area_2d_area_entered(area):
 	if (area.is_in_group("enemies")):
 		colicionar_com_enemigo(area)
-	elif (area.is_in_group("deatzone")):
+	elif (area.is_in_group("deatzone") or area.is_in_group("projectiles")):
 		lose()
 
 # Función que permite la colición con enemigos terrestres.

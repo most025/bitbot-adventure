@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://it3661fnwtfd"]
+[gd_scene load_steps=10 format=4 uid="uid://it3661fnwtfd"]
 
 [ext_resource type="PackedScene" uid="uid://cqqqo6cpmao2y" path="res://Scene/main/player.tscn" id="1_jtolt"]
 [ext_resource type="Texture2D" uid="uid://bywbindk6780q" path="res://assets/backgrounds/blue_land.png" id="1_t8dw2"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bktb7y0vvlli5" path="res://Scene/enemies/bee.tscn" id="4_15awg"]
 [ext_resource type="PackedScene" uid="uid://dckif46bsl53c" path="res://Scene/enemies/snail.tscn" id="5_em8nf"]
 [ext_resource type="PackedScene" uid="uid://dei3b1lpfql40" path="res://deatzone/deatzone.tscn" id="5_lbmxd"]
+[ext_resource type="PackedScene" uid="uid://c1xbskuetpobk" path="res://Scene/enemies/bernacle.tscn" id="6_se0q8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a3ulg"]
 texture = ExtResource("2_44jk3")
@@ -54,6 +55,9 @@ position = Vector2(3039, -1102)
 
 [node name="Snail" parent="Enemies" groups=["enemies"] instance=ExtResource("5_em8nf")]
 position = Vector2(667, -672)
+
+[node name="Bernacle" parent="Enemies" instance=ExtResource("6_se0q8")]
+position = Vector2(1171, -608)
 
 [node name="Deatzone" parent="." instance=ExtResource("5_lbmxd")]
 position = Vector2(4025, -290)
