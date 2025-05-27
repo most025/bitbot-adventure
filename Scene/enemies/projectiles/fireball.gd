@@ -1,5 +1,5 @@
 extends Area2D
-var speed=200
+var speed=-200
 var rotation_speed= 2 * TAU
 
 func _process(delta: float) -> void:

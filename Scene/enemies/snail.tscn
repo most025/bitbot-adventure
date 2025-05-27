@@ -37,6 +37,6 @@ position = Vector2(2, -33)
 shape = SubResource("RectangleShape2D_b7k8v")
 debug_color = Color(0.284159, 0.527242, 0.911959, 0.42)
 
-[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." groups=["enemies"]]
 position = Vector2(5, -33)
 scale = Vector2(9.8, 6.4)

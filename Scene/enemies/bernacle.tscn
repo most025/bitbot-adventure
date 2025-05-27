@@ -19,7 +19,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3hw0h"]
-size = Vector2(48, 112)
+size = Vector2(48, 88)
 
 [node name="Bernacle" type="Area2D" groups=["enemies"]]
 collision_layer = 2
@@ -33,7 +33,7 @@ autoplay = "default"
 frame_progress = 0.718098
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -56)
+position = Vector2(0, -44)
 shape = SubResource("RectangleShape2D_3hw0h")
 
 [node name="Timer" type="Timer" parent="."]
