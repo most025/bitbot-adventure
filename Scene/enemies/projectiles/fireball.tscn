@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scene/enemies/projectiles/fireball.gd" id="1_xasgy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_re2ca"]
-radius = 18.4391
+radius = 20.025
 
 [node name="fireball" type="Area2D" groups=["projectiles"]]
 script = ExtResource("1_xasgy")
