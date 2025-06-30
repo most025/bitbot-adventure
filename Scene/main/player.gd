@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 var gravity=800.0
+var coins = 0
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -49,7 +50,7 @@ func lose():
 	get_tree().reload_current_scene()
 
 # Función con la lógica que determina la colición del jugador con el enemigo aereo.
-func colicionar_com_enemigo(enemy):
+func colisionar_con_enemigo(enemy):
 	if (position.y < enemy.position.y):
 		enemy.queue_free()
 		velocity.y=JUMP_VELOCITY
@@ -58,11 +59,15 @@ func colicionar_com_enemigo(enemy):
 # Función que permite la colición con eneigos aereos.
 func _on_area_2d_area_entered(area):
 	if (area.is_in_group("enemies")):
-		colicionar_com_enemigo(area)
-	elif (area.is_in_group("deatzone") or area.is_in_group("projectiles")):
+		colisionar_con_enemigo(area)
+	elif (area.is_in_group("deatzone")) or (area.is_in_group("projectiles")):
 		lose()
+	elif (area.is_in_group("coins")):
+		coins += 1
+		area.queue_free()
+		
 
 # Función que permite la colición con enemigos terrestres.
 func _on_area_2d_body_entered(body: Node2D) -> void:
 		if (body.is_in_group("enemies")):
-			colicionar_com_enemigo(body)
+			colisionar_con_enemigo(body)

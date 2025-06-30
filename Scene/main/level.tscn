@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://it3661fnwtfd"]
+[gd_scene load_steps=11 format=4 uid="uid://it3661fnwtfd"]
 
 [ext_resource type="PackedScene" uid="uid://cqqqo6cpmao2y" path="res://Scene/main/player.tscn" id="1_jtolt"]
 [ext_resource type="Texture2D" uid="uid://bywbindk6780q" path="res://assets/backgrounds/blue_land.png" id="1_t8dw2"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dckif46bsl53c" path="res://Scene/enemies/snail.tscn" id="5_em8nf"]
 [ext_resource type="PackedScene" uid="uid://dei3b1lpfql40" path="res://deatzone/deatzone.tscn" id="5_lbmxd"]
 [ext_resource type="PackedScene" uid="uid://c1xbskuetpobk" path="res://Scene/enemies/bernacle.tscn" id="6_se0q8"]
+[ext_resource type="PackedScene" uid="uid://dux6f0j4efb6k" path="res://Scene/level_objects/coin.tscn" id="8_ocxyg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a3ulg"]
 texture = ExtResource("2_44jk3")
@@ -62,3 +63,11 @@ position = Vector2(1171, -608)
 [node name="Deatzone" parent="." instance=ExtResource("5_lbmxd")]
 position = Vector2(4025, -290)
 scale = Vector2(2.71417, 3.04231)
+
+[node name="coins" type="Node2D" parent="."]
+
+[node name="Coin1" parent="coins" instance=ExtResource("8_ocxyg")]
+position = Vector2(851, -840)
+
+[node name="Coin2" parent="coins" instance=ExtResource("8_ocxyg")]
+position = Vector2(1515, -512)
