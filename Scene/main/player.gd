@@ -5,6 +5,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 var gravity=800.0
 var coins = 0
+var lives = 3
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -65,7 +66,9 @@ func _on_area_2d_area_entered(area):
 	elif (area.is_in_group("coins")):
 		coins += 1
 		area.queue_free()
-		
+	elif (area.is_in_group("one_ups")):
+		lives+=1
+		area.queue_free()
 
 # Función que permite la colición con enemigos terrestres.
 func _on_area_2d_body_entered(body: Node2D) -> void:

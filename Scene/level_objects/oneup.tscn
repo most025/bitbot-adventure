@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctvydlbf4qn4f"]
+
+[ext_resource type="Texture2D" uid="uid://nada0jr5vmyb" path="res://assets/level_objects/heart.png" id="1_dj0x7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p7swr"]
+radius = 23.0
+
+[node name="Oneup" type="Area2D" groups=["one_ups"]]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_dj0x7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_p7swr")
