@@ -6,6 +6,10 @@ const JUMP_VELOCITY = -500.0
 var gravity=800.0
 var coins = 0
 var lives = 3
+var last_checkpoint_position= Vector2.ZERO
+
+func _ready() -> void:
+	last_checkpoint_position= position
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -48,7 +52,11 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play("idle")
 
 func lose():
-	get_tree().reload_current_scene()
+	lives -= 1
+	if lives > 0:
+		position = last_checkpoint_position
+	else:
+		get_tree().reload_current_scene()
 
 # Función con la lógica que determina la colición del jugador con el enemigo aereo.
 func colisionar_con_enemigo(enemy):
@@ -69,6 +77,9 @@ func _on_area_2d_area_entered(area):
 	elif (area.is_in_group("one_ups")):
 		lives+=1
 		area.queue_free()
+	elif (area.is_in_group("checkpoints")):
+		last_checkpoint_position= area.position
+		area.take()
 
 # Función que permite la colición con enemigos terrestres.
 func _on_area_2d_body_entered(body: Node2D) -> void:
