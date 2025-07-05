@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dux6f0j4efb6k"]
+[gd_scene load_steps=4 format=3 uid="uid://dux6f0j4efb6k"]
 
 [ext_resource type="Texture2D" uid="uid://bmurl7fahn7pm" path="res://assets/level_objects/coinGold.png" id="1_r7y7f"]
+[ext_resource type="Script" path="res://Scene/level_objects/coin.gd" id="1_w7gfh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mu2pj"]
 radius = 32.28
@@ -9,6 +10,7 @@ radius = 32.28
 scale = Vector2(0.5, 0.5)
 collision_layer = 2
 collision_mask = 0
+script = ExtResource("1_w7gfh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_r7y7f")
