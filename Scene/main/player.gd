@@ -1,11 +1,9 @@
 extends CharacterBody2D
 
-
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 var gravity=800.0
-var coins = 0
-var lives = 3
+
 var last_checkpoint_position= Vector2.ZERO
 
 func _ready() -> void:
@@ -52,8 +50,8 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play("idle")
 
 func lose():
-	lives -= 1
-	if lives > 0:
+	GameManager.lives -= 1
+	if GameManager.lives > 0:
 		position = last_checkpoint_position
 	else:
 		get_tree().reload_current_scene()
@@ -72,10 +70,10 @@ func _on_area_2d_area_entered(area):
 	elif (area.is_in_group("deatzone")) or (area.is_in_group("projectiles")):
 		lose()
 	elif (area.is_in_group("coins")):
-		coins += 1
+		GameManager.coins += 1
 		area.queue_free()
 	elif (area.is_in_group("one_ups")):
-		lives+=1
+		GameManager.lives+=1
 		area.queue_free()
 	elif (area.is_in_group("checkpoints")):
 		last_checkpoint_position= area.position

@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwhc8nk2nm7ve"]
+
+[ext_resource type="Script" path="res://Scene/main/hud.gd" id="1_m63a5"]
+[ext_resource type="Texture2D" uid="uid://nada0jr5vmyb" path="res://assets/level_objects/heart.png" id="1_mw5xf"]
+[ext_resource type="Texture2D" uid="uid://bmurl7fahn7pm" path="res://assets/level_objects/coinGold.png" id="2_ik0rw"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_m63a5")
+
+[node name="TextureLives" type="TextureRect" parent="."]
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 131.0
+offset_bottom = 131.0
+scale = Vector2(0.637155, 0.634836)
+texture = ExtResource("1_mw5xf")
+
+[node name="LabelLives" type="Label" parent="."]
+offset_left = 82.0
+offset_top = 25.0
+offset_right = 124.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 31
+text = "0"
+horizontal_alignment = 1
+
+[node name="TextureCoins" type="TextureRect" parent="."]
+offset_left = 1.0
+offset_top = 105.0
+offset_right = 129.0
+offset_bottom = 233.0
+scale = Vector2(0.703407, 0.671343)
+texture = ExtResource("2_ik0rw")
+
+[node name="LabelCoins" type="Label" parent="."]
+offset_left = 80.0
+offset_top = 127.0
+offset_right = 121.0
+offset_bottom = 171.0
+theme_override_font_sizes/font_size = 31
+text = "0"
+horizontal_alignment = 1

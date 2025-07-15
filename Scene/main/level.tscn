@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://it3661fnwtfd"]
+[gd_scene load_steps=14 format=4 uid="uid://it3661fnwtfd"]
 
 [ext_resource type="PackedScene" uid="uid://cqqqo6cpmao2y" path="res://Scene/main/player.tscn" id="1_jtolt"]
 [ext_resource type="Texture2D" uid="uid://bywbindk6780q" path="res://assets/backgrounds/blue_land.png" id="1_t8dw2"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ctvydlbf4qn4f" path="res://Scene/level_objects/oneup.tscn" id="8_57b7v"]
 [ext_resource type="PackedScene" uid="uid://dux6f0j4efb6k" path="res://Scene/level_objects/coin.tscn" id="8_ocxyg"]
 [ext_resource type="PackedScene" uid="uid://dyiq0rakywxgr" path="res://Scene/level_objects/checkpoint.tscn" id="10_2pnaa"]
+[ext_resource type="PackedScene" uid="uid://cwhc8nk2nm7ve" path="res://Scene/main/hud.tscn" id="11_lulno"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a3ulg"]
 texture = ExtResource("2_44jk3")
@@ -89,3 +90,5 @@ scale = Vector2(2.71417, 3.04231)
 
 [node name="Checkpoint" parent="Checkpoints" instance=ExtResource("10_2pnaa")]
 position = Vector2(1779, -482)
+
+[node name="HUD" parent="." instance=ExtResource("11_lulno")]
