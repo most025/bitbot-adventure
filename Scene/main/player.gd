@@ -55,6 +55,7 @@ func lose():
 		position = last_checkpoint_position
 	else:
 		get_tree().reload_current_scene()
+		GameManager.reset()
 
 # Función con la lógica que determina la colición del jugador con el enemigo aereo.
 func colisionar_con_enemigo(enemy):
