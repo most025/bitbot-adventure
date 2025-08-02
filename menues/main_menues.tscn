@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxb6hurgri8wk"]
+
+[ext_resource type="Script" path="res://menues/main_menues.gd" id="1_4fp4n"]
+[ext_resource type="Texture2D" uid="uid://bvtvyys5kgwcf" path="res://assets/backgrounds/colored_grass.png" id="1_nq6sj"]
+[ext_resource type="Texture2D" uid="uid://b8f4byqd7bilh" path="res://assets/player/platformChar_walk1.png" id="2_aojj8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7btcr"]
+bg_color = Color(0.792488, 0.441977, 0.158731, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dtafs"]
+bg_color = Color(0.792157, 0.443137, 0.156863, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chev4"]
+bg_color = Color(0.792157, 0.443137, 0.156863, 1)
+border_color = Color(0.792157, 0.443137, 0.156863, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="MainMenues" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 397.0
+offset_bottom = 538.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4fp4n")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -359.0
+offset_right = 1304.0
+offset_bottom = 665.0
+texture = ExtResource("1_nq6sj")
+
+[node name="PlayerTexture" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 95.0
+offset_right = 401.0
+offset_bottom = 393.0
+texture = ExtResource("2_aojj8")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 33.0
+offset_right = 1248.0
+offset_bottom = 187.0
+theme_override_colors/font_color = Color(0.721424, 0.510517, 0.149481, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "Bitbot Adventure"
+horizontal_alignment = 1
+
+[node name="ButtonPlay" type="Button" parent="."]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 204.0
+offset_right = 1031.0
+offset_bottom = 349.0
+theme_override_font_sizes/font_size = 90
+theme_override_styles/normal = SubResource("StyleBoxFlat_7btcr")
+text = "Play"
+
+[node name="ButtonControls" type="Button" parent="."]
+layout_mode = 0
+offset_left = 549.0
+offset_top = 386.0
+offset_right = 1028.0
+offset_bottom = 518.0
+theme_override_font_sizes/font_size = 90
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dtafs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_chev4")
+text = "Controls"
+
+[connection signal="pressed" from="ButtonPlay" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="ButtonControls" to="." method="_on_button_controls_pressed"]
