@@ -18,6 +18,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		Sound.play("Jump")
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -42,6 +43,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		#si el jugador no esta en el suelo se ejecuta este frame. 
 		$AnimatedSprite2D.play("jump")
+		
 	elif direction != 0:
 		# si el jugador se ha movido se ejecutara este frame.
 		$AnimatedSprite2D.play("walk")
@@ -53,15 +55,18 @@ func lose():
 	GameManager.lives -= 1
 	if GameManager.lives > 0:
 		position = last_checkpoint_position
+		Sound.play("LoseLife")
 	else:
 		get_tree().reload_current_scene()
 		GameManager.reset()
+		Sound.play("GameOver")
 
 # Función con la lógica que determina la colición del jugador con el enemigo aereo.
 func colisionar_con_enemigo(enemy):
 	if (position.y < enemy.position.y):
 		enemy.queue_free()
 		velocity.y=JUMP_VELOCITY
+		Sound.play("EnemyKill")
 	else:
 		lose()
 # Función que permite la colición con eneigos aereos.
@@ -72,9 +77,11 @@ func _on_area_2d_area_entered(area):
 		lose()
 	elif (area.is_in_group("coins")):
 		GameManager.coins += 1
+		Sound.play("Coin")
 		area.queue_free()
 	elif (area.is_in_group("one_ups")):
 		GameManager.lives+=1
+		Sound.play("Oneup")
 		area.queue_free()
 	elif (area.is_in_group("checkpoints")):
 		last_checkpoint_position= area.position
