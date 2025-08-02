@@ -14,22 +14,29 @@ script = ExtResource("1_hlydd")
 
 [node name="LevelTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_xv0hx")
+bus = &"Music"
 parameters/looping = true
 
 [node name="Jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_qxd2k")
+bus = &"SFX"
 
 [node name="Coin" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_a1qhq")
+bus = &"SFX"
 
 [node name="Oneup" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_qfi1o")
+bus = &"SFX"
 
 [node name="EnemyKill" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_iwhow")
+bus = &"SFX"
 
 [node name="LoseLife" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_mh6qd")
+bus = &"SFX"
 
 [node name="GameOver" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_1se8u")
+bus = &"SFX"
