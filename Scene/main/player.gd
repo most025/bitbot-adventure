@@ -84,8 +84,10 @@ func _on_area_2d_area_entered(area):
 		Sound.play("Oneup")
 		area.queue_free()
 	elif (area.is_in_group("checkpoints")):
-		last_checkpoint_position= area.position
-		area.take()
+		if not area.is_taken:
+			last_checkpoint_position= area.position
+			area.take()
+			Sound.play("Oneup")
 
 # Función que permite la colición con enemigos terrestres.
 func _on_area_2d_body_entered(body: Node2D) -> void:
