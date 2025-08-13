@@ -88,7 +88,9 @@ func _on_area_2d_area_entered(area):
 			last_checkpoint_position= area.position
 			area.take()
 			Sound.play("Oneup")
-
+	elif (area.is_in_group("Exit_sign")):
+		get_tree().change_scene_to_file("res://menues/win_menu.tscn")
+		Sound.play("Oneup")
 # Función que permite la colición con enemigos terrestres.
 func _on_area_2d_body_entered(body: Node2D) -> void:
 		if (body.is_in_group("enemies")):

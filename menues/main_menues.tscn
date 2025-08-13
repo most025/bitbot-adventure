@@ -41,8 +41,8 @@ script = ExtResource("1_4fp4n")
 layout_mode = 0
 offset_left = 1.0
 offset_top = -359.0
-offset_right = 1304.0
-offset_bottom = 665.0
+offset_right = 1508.0
+offset_bottom = 789.0
 texture = ExtResource("1_nq6sj")
 
 [node name="PlayerTexture" type="TextureRect" parent="."]
@@ -73,7 +73,7 @@ offset_right = 1031.0
 offset_bottom = 349.0
 theme_override_font_sizes/font_size = 90
 theme_override_styles/normal = SubResource("StyleBoxFlat_7btcr")
-text = "Play"
+text = "Jugar"
 
 [node name="ButtonControls" type="Button" parent="."]
 layout_mode = 0
@@ -84,7 +84,7 @@ offset_bottom = 518.0
 theme_override_font_sizes/font_size = 90
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dtafs")
 theme_override_styles/normal = SubResource("StyleBoxFlat_chev4")
-text = "Controls"
+text = "Controles"
 
 [connection signal="pressed" from="ButtonPlay" to="." method="_on_button_play_pressed"]
 [connection signal="pressed" from="ButtonControls" to="." method="_on_button_controls_pressed"]
