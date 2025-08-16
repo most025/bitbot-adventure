@@ -1,9 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://dl7q262tr4vpw"]
+[gd_scene load_steps=6 format=3 uid="uid://dl7q262tr4vpw"]
 
 [ext_resource type="Script" path="res://menues/menu_controls.gd" id="1_f0lgy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d7sjm"]
 bg_color = Color(0.835208, 0.512233, 0.214023, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sp77b"]
+bg_color = Color(0.733333, 0.270588, 0.054902, 1)
+border_color = Color(0.733333, 0.270588, 0.054902, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gy0p5"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.556361, 0.196208, 0.0274362, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvsx7"]
 bg_color = Color(0.732138, 0.270256, 0.0542082, 1)
@@ -54,6 +73,8 @@ offset_top = 435.0
 offset_right = 780.0
 offset_bottom = 536.0
 theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = SubResource("StyleBoxFlat_sp77b")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gy0p5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_yvsx7")
 text = "Volver"
 

@@ -76,12 +76,33 @@ position = Vector2(851, -840)
 position = Vector2(1515, -512)
 
 [node name="Coin3" parent="coins" instance=ExtResource("8_ocxyg")]
-position = Vector2(5731, -1672)
+position = Vector2(5635, -1657)
+
+[node name="Coin4" parent="coins" instance=ExtResource("8_ocxyg")]
+position = Vector2(6081, -1665)
+
+[node name="Coin5" parent="coins" instance=ExtResource("8_ocxyg")]
+position = Vector2(5286, -1660)
+
+[node name="Coin6" parent="coins" instance=ExtResource("8_ocxyg")]
+position = Vector2(4808, -1262)
 
 [node name="Oneup" type="Node2D" parent="."]
 
 [node name="Oneup" parent="Oneup" instance=ExtResource("8_57b7v")]
 position = Vector2(2348, -960)
+
+[node name="Oneup2" parent="Oneup" instance=ExtResource("8_57b7v")]
+position = Vector2(5741, -1672)
+
+[node name="Oneup3" parent="Oneup" instance=ExtResource("8_57b7v")]
+position = Vector2(7034, -954)
+
+[node name="Oneup4" parent="Oneup" instance=ExtResource("8_57b7v")]
+position = Vector2(2348, -960)
+
+[node name="Oneup5" parent="Oneup" instance=ExtResource("8_57b7v")]
+position = Vector2(4588, -1151)
 
 [node name="Deatzone" parent="." instance=ExtResource("5_lbmxd")]
 position = Vector2(4025, -290)
