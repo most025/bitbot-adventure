@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
 const SPEED = 300.0
+const EnemyExplosion= preload("res://Scene/vfx/enemy_explosion.tscn")
 const JUMP_VELOCITY = -500.0
 var gravity=800.0
+
 
 var last_checkpoint_position= Vector2.ZERO
 
@@ -67,6 +69,9 @@ func colisionar_con_enemigo(enemy):
 		enemy.queue_free()
 		velocity.y=JUMP_VELOCITY
 		Sound.play("EnemyKill")
+		var Explosion=EnemyExplosion.instantiate()
+		Explosion.global_position=enemy.global_position+30*Vector2.UP
+		add_child(Explosion)
 	else:
 		lose()
 # Función que permite la colición con eneigos aereos.
