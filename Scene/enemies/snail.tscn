@@ -19,9 +19,9 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b7k8v"]
-size = Vector2(86, 60)
+size = Vector2(78, 71)
 
-[node name="Snail" type="CharacterBody2D"]
+[node name="Snail" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_auys2")
@@ -33,7 +33,7 @@ autoplay = "default"
 frame_progress = 0.0591599
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, -33)
+position = Vector2(9, -36.5)
 shape = SubResource("RectangleShape2D_b7k8v")
 debug_color = Color(0.284159, 0.527242, 0.911959, 0.42)
 

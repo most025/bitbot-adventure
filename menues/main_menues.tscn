@@ -1,8 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxb6hurgri8wk"]
+[gd_scene load_steps=10 format=3 uid="uid://dxb6hurgri8wk"]
 
 [ext_resource type="Script" path="res://menues/main_menues.gd" id="1_4fp4n"]
 [ext_resource type="Texture2D" uid="uid://bvtvyys5kgwcf" path="res://assets/backgrounds/colored_grass.png" id="1_nq6sj"]
 [ext_resource type="Texture2D" uid="uid://b8f4byqd7bilh" path="res://assets/player/platformChar_walk1.png" id="2_aojj8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k83ny"]
+bg_color = Color(0.792157, 0.443137, 0.156863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_blve1"]
+bg_color = Color(0.505297, 0.269184, 0.0692439, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7btcr"]
 bg_color = Color(0.792488, 0.441977, 0.158731, 1)
@@ -11,8 +21,11 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dtafs"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_10et7"]
 bg_color = Color(0.792157, 0.443137, 0.156863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dtafs"]
+bg_color = Color(0.590726, 0.319047, 0.0895755, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -35,6 +48,7 @@ offset_right = 397.0
 offset_bottom = 538.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 script = ExtResource("1_4fp4n")
 
 [node name="Background" type="TextureRect" parent="."]
@@ -53,7 +67,7 @@ offset_right = 401.0
 offset_bottom = 393.0
 texture = ExtResource("2_aojj8")
 
-[node name="Label" type="Label" parent="."]
+[node name="LabelTitulo" type="Label" parent="."]
 layout_mode = 0
 offset_left = 419.0
 offset_top = 33.0
@@ -72,6 +86,8 @@ offset_top = 204.0
 offset_right = 1031.0
 offset_bottom = 349.0
 theme_override_font_sizes/font_size = 90
+theme_override_styles/hover = SubResource("StyleBoxFlat_k83ny")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_blve1")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7btcr")
 text = "Jugar"
 
@@ -82,6 +98,7 @@ offset_top = 386.0
 offset_right = 1028.0
 offset_bottom = 518.0
 theme_override_font_sizes/font_size = 90
+theme_override_styles/hover = SubResource("StyleBoxFlat_10et7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dtafs")
 theme_override_styles/normal = SubResource("StyleBoxFlat_chev4")
 text = "Controles"
