@@ -21,8 +21,6 @@ texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 2:5/0 = 0
-2:0/0 = 0
-3:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_px77d"]
 tile_size = Vector2i(64, 64)
@@ -58,7 +56,13 @@ position = Vector2(-4, -81)
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Bee" parent="Enemies" instance=ExtResource("4_15awg")]
-position = Vector2(3686, -1047)
+position = Vector2(3039, -1102)
+
+[node name="Snail" parent="Enemies" groups=["enemies"] instance=ExtResource("5_em8nf")]
+position = Vector2(667, -672)
+
+[node name="Bernacle" parent="Enemies" instance=ExtResource("6_se0q8")]
+position = Vector2(1171, -608)
 
 [node name="Bee2" parent="Enemies" instance=ExtResource("4_15awg")]
 position = Vector2(10300, -2304)
