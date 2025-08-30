@@ -166,17 +166,9 @@ position = Vector2(4808, -1262)
 [node name="Oneup" parent="Oneup" instance=ExtResource("8_57b7v")]
 position = Vector2(2348, -960)
 
-[node name="Oneup2" parent="Oneup" instance=ExtResource("8_57b7v")]
-position = Vector2(3416, -1044)
-
-[node name="Oneup3" parent="Oneup" instance=ExtResource("8_57b7v")]
-position = Vector2(6361, -1497)
-
-[node name="Oneup4" parent="Oneup" instance=ExtResource("8_57b7v")]
-position = Vector2(1988, -1914)
-
-[node name="Oneup5" parent="Oneup" instance=ExtResource("8_57b7v")]
-position = Vector2(3869, -1529)
+[node name="Deatzone" parent="." instance=ExtResource("5_lbmxd")]
+position = Vector2(4025, -290)
+scale = Vector2(2.71417, 3.04231)
 
 [node name="Checkpoints" type="Node2D" parent="."]
 
