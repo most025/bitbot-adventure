@@ -72,23 +72,29 @@ func colisionar_con_enemigo(enemy):
 # Función que permite la colición con eneigos aereos.
 func _on_area_2d_area_entered(area):
 	if (area.is_in_group("enemies")):
+		# Esta parte se encarga del comportamiento del jugador cuando colisiona con los enemigos del nivel.
 		colisionar_con_enemigo(area)
 	elif (area.is_in_group("deatzone")) or (area.is_in_group("projectiles")):
+		# Esta parte se encarga del comportamiento de cuando el enimigo le hace daño al jugador y de cuando el jugador cae a un abismo.
 		lose()
 	elif (area.is_in_group("coins")):
+		# Esta parte se cengarga del comportamiento de cuando el jugador toma una moneda.
 		GameManager.coins += 1
 		Sound.play("Coin")
 		area.queue_free()
 	elif (area.is_in_group("one_ups")):
+		# Esta parte se encarga del comportamiento de cuando el jugador toma una Vida.
 		GameManager.lives+=1
 		Sound.play("Oneup")
 		area.queue_free()
 	elif (area.is_in_group("checkpoints")):
+		# Esta parte se encarga del funcionamiento cuando se toca un checkpoint.
 		if not area.is_taken:
 			last_checkpoint_position= area.position
 			area.take()
 			Sound.play("Oneup")
 	elif (area.is_in_group("Exit_sign")):
+		# Esta parte se encarga del funcionamiento del cartel de mata al final del nivel.
 		get_tree().change_scene_to_file("res://menues/win_menu.tscn")
 		Sound.play("Oneup")
 # Función que permite la colición con enemigos terrestres.

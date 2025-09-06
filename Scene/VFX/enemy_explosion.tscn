@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj26ygw7ktyb5"]
+
+[ext_resource type="Texture2D" uid="uid://c1lkvkn51l41s" path="res://assets/VFX/brickGrey.png" id="1_ewvv4"]
+
+[node name="Enemy_explosion" type="CPUParticles2D"]
+amount = 50
+texture = ExtResource("1_ewvv4")

@@ -1,8 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://tvnhbmovp8hi"]
+[gd_scene load_steps=7 format=3 uid="uid://tvnhbmovp8hi"]
 
 [ext_resource type="Texture2D" uid="uid://bgfulwfku8080" path="res://assets/backgrounds/colored_shroom.png" id="1_01h6q"]
 [ext_resource type="Script" path="res://menues/win_menu.gd" id="1_k83hq"]
 [ext_resource type="Texture2D" uid="uid://dnjwa8dkqkccb" path="res://assets/player/platformChar_jump.png" id="2_pnr46"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7yw5f"]
+bg_color = Color(0.568516, 0.266045, 0.0608104, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryaea"]
+bg_color = Color(0.465371, 0.212707, 0.0409256, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_doa26"]
+bg_color = Color(0.667245, 0.315899, 0.0830696, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="WinMenu" type="Control"]
 layout_mode = 3
@@ -44,12 +65,26 @@ horizontal_alignment = 1
 
 [node name="LabelCoins" type="Label" parent="."]
 layout_mode = 0
-offset_left = 472.0
-offset_top = 300.0
-offset_right = 960.0
-offset_bottom = 625.0
+offset_left = 447.0
+offset_top = 190.0
+offset_right = 1007.0
+offset_bottom = 484.0
 theme_override_colors/font_color = Color(0.808207, 0.52128, 0.14098, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 60
 text = "Tu has coleccionado 10 monedas"
 autowrap_mode = 3
+
+[node name="ButtonReturnMenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 548.0
+offset_right = 935.0
+offset_bottom = 625.0
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_7yw5f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ryaea")
+theme_override_styles/normal = SubResource("StyleBoxFlat_doa26")
+text = "Volver al menu principal"
+
+[connection signal="pressed" from="ButtonReturnMenu" to="." method="_on_button_return_menu_pressed"]

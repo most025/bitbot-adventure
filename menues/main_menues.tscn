@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxb6hurgri8wk"]
+[gd_scene load_steps=13 format=3 uid="uid://dxb6hurgri8wk"]
 
 [ext_resource type="Script" path="res://menues/main_menues.gd" id="1_4fp4n"]
 [ext_resource type="Texture2D" uid="uid://bvtvyys5kgwcf" path="res://assets/backgrounds/colored_grass.png" id="1_nq6sj"]
@@ -6,6 +6,10 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k83ny"]
 bg_color = Color(0.792157, 0.443137, 0.156863, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_blve1"]
 bg_color = Color(0.505297, 0.269184, 0.0692439, 1)
@@ -23,6 +27,10 @@ corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_10et7"]
 bg_color = Color(0.792157, 0.443137, 0.156863, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dtafs"]
 bg_color = Color(0.590726, 0.319047, 0.0895755, 1)
@@ -34,6 +42,27 @@ corner_radius_bottom_left = 20
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chev4"]
 bg_color = Color(0.792157, 0.443137, 0.156863, 1)
 border_color = Color(0.792157, 0.443137, 0.156863, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28pmv"]
+bg_color = Color(0.792157, 0.443137, 0.156863, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_54qjv"]
+bg_color = Color(0.590725, 0.319047, 0.0895753, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jipg8"]
+bg_color = Color(0.792157, 0.443137, 0.156863, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -81,10 +110,10 @@ horizontal_alignment = 1
 
 [node name="ButtonPlay" type="Button" parent="."]
 layout_mode = 0
-offset_left = 552.0
-offset_top = 204.0
-offset_right = 1031.0
-offset_bottom = 349.0
+offset_left = 597.0
+offset_top = 168.0
+offset_right = 1055.0
+offset_bottom = 292.0
 theme_override_font_sizes/font_size = 90
 theme_override_styles/hover = SubResource("StyleBoxFlat_k83ny")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_blve1")
@@ -93,15 +122,28 @@ text = "Jugar"
 
 [node name="ButtonControls" type="Button" parent="."]
 layout_mode = 0
-offset_left = 549.0
-offset_top = 386.0
-offset_right = 1028.0
-offset_bottom = 518.0
+offset_left = 594.0
+offset_top = 323.0
+offset_right = 1055.0
+offset_bottom = 447.0
 theme_override_font_sizes/font_size = 90
 theme_override_styles/hover = SubResource("StyleBoxFlat_10et7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dtafs")
 theme_override_styles/normal = SubResource("StyleBoxFlat_chev4")
 text = "Controles"
 
+[node name="ButtonExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 593.0
+offset_top = 464.0
+offset_right = 1056.0
+offset_bottom = 596.0
+theme_override_font_sizes/font_size = 90
+theme_override_styles/hover = SubResource("StyleBoxFlat_28pmv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_54qjv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jipg8")
+text = "Salir"
+
 [connection signal="pressed" from="ButtonPlay" to="." method="_on_button_play_pressed"]
 [connection signal="pressed" from="ButtonControls" to="." method="_on_button_controls_pressed"]
+[connection signal="pressed" from="ButtonExit" to="." method="_on_button_exit_pressed"]

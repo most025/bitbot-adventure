@@ -8,3 +8,8 @@ func _on_button_play_pressed() -> void:
 
 func _on_button_controls_pressed() -> void:
 	get_tree().change_scene_to_file("res://menues/menu_controls.tscn")
+
+
+func _on_button_exit_pressed() -> void:
+	get_tree().quit()
+	pass # Replace with function body.
