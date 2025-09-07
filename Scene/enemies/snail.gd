@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 100.0
+@export var speed = 100.0
 var direction= -1
 
 func _physics_process(delta: float) -> void:
@@ -17,6 +17,6 @@ func _physics_process(delta: float) -> void:
 				direction= -1
 				$AnimatedSprite2D.flip_h= false
 	
-	velocity.x = direction * SPEED
+	velocity.x = direction * speed
 
 	move_and_slide()

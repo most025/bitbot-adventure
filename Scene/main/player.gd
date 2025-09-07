@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+const EnemyExplosion= preload("res://Scene/VFX/enemy_explosion.tscn")
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 var gravity=800.0
@@ -67,6 +68,9 @@ func colisionar_con_enemigo(enemy):
 		enemy.queue_free()
 		velocity.y=JUMP_VELOCITY
 		Sound.play("EnemyKill")
+		var explosion=EnemyExplosion.instantiate()
+		explosion.global_position= enemy.global_position+30*Vector2.UP
+		add_child(explosion)
 	else:
 		lose()
 # Función que permite la colición con eneigos aereos.
@@ -94,7 +98,7 @@ func _on_area_2d_area_entered(area):
 			area.take()
 			Sound.play("Oneup")
 	elif (area.is_in_group("Exit_sign")):
-		# Esta parte se encarga del funcionamiento del cartel de mata al final del nivel.
+		# Esta parte se encarga del funcionamiento del cartel de meta al final del nivel.
 		get_tree().change_scene_to_file("res://menues/win_menu.tscn")
 		Sound.play("Oneup")
 # Función que permite la colición con enemigos terrestres.

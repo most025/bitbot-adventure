@@ -1,6 +1,6 @@
 extends CanvasLayer
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$LabelLives.text= str(GameManager.lives)
 	$LabelCoins.text= str(GameManager.coins)

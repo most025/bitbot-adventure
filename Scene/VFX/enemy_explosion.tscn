@@ -1,7 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://bj26ygw7ktyb5"]
+[gd_scene load_steps=5 format=3 uid="uid://bj26ygw7ktyb5"]
 
 [ext_resource type="Texture2D" uid="uid://c1lkvkn51l41s" path="res://assets/VFX/brickGrey.png" id="1_ewvv4"]
+[ext_resource type="Script" path="res://Scene/VFX/enemy_explosion.gd" id="2_h13nk"]
+
+[sub_resource type="Curve" id="Curve_5y0ie"]
+_data = [Vector2(0.00892857, 0.00377357), 0.0, 0.0, 0, 0, Vector2(1, 0.969811), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_f5m15"]
+offsets = PackedFloat32Array(0.597315, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="Enemy_explosion" type="CPUParticles2D"]
+top_level = true
+emitting = false
 amount = 50
+lifetime = 0.5
+one_shot = true
+preprocess = 0.2
 texture = ExtResource("1_ewvv4")
+emission_shape = 1
+emission_sphere_radius = 64.0
+gravity = Vector2(0, 0)
+scale_amount_curve = SubResource("Curve_5y0ie")
+color_ramp = SubResource("Gradient_f5m15")
+script = ExtResource("2_h13nk")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

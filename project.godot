@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 GameManager="*res://Scene/main/game_manager.tscn"
 Sound="*res://Scene/main/sound.tscn"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [global_group]
 
 enemies=""
