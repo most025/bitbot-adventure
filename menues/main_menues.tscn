@@ -144,6 +144,18 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_54qjv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jipg8")
 text = "Salir"
 
+[node name="LabelCopyright" type="Label" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 498.0
+offset_right = 421.0
+offset_bottom = 639.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "© Desarrollado por Cristian Mostazo. Todos los derechos reservados."
+autowrap_mode = 3
+
 [connection signal="pressed" from="ButtonPlay" to="." method="_on_button_play_pressed"]
 [connection signal="pressed" from="ButtonControls" to="." method="_on_button_controls_pressed"]
 [connection signal="pressed" from="ButtonExit" to="." method="_on_button_exit_pressed"]
